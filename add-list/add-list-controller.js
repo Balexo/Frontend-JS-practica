@@ -1,5 +1,5 @@
 import { getAdds } from "./add-list-model.js";
-import { buildAdd } from "./add-list-view.js";
+import { buildAdd, buildEmptyAdds } from "./add-list-view.js";
 
 export  function addListController(addList){
     const showAddsButton = document.createElement("button");
@@ -9,16 +9,22 @@ export  function addListController(addList){
     
     handleShowAddsButtonClicked(addList);
 }
-)}
-
+)
+}
 async function handleShowAddsButtonClicked(addList){
-
+    const spinner = addList.querySelector(".lds-roller");
     try {
+        spinner.classList.toggle("hidden");
         const adds = await getAdds();
-        renderAdds(adds, addList)
+        if(adds.length>0){
+            renderAdds(adds, addList)
+        }else{
+            renderEmptyAdds(addList);
+        }
     }catch (error) {
-        alert(error);
+        dispatchErrorEvent(error, addList);
     }
+    spinner.classList.toggle("hidden");
 }
 
 
@@ -30,3 +36,19 @@ async function renderAdds(adds, addList){
         addList.appendChild(addItem);
     })
 }
+
+function renderEmptyAdds(addList){
+    addList.innerHTML=buildEmptyAdds();
+}
+
+function dispatchErrorEvent(messageError, addList){
+    const event = new CustomEvent("error-loading-adds", {
+        detail: {
+            message: messageError,
+            type: "error"
+        }
+    });
+
+    addList.dispatchEvent(event);
+}
+

@@ -29,7 +29,7 @@ export async function parseAdds(data){
             adds = parseAdds(data);
             
         } catch (error) {
-            throw new Error ("Error obteniendo los tweets");
+            throw new Error ("Error obteniendo los anuncios");
         }
     return adds;
 }
