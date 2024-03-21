@@ -1,5 +1,6 @@
 import { getAdds } from "./add-list-model.js";
 import { buildAdd, buildEmptyAdds } from "./add-list-view.js";
+import { dispatchEvent } from "../dispatchEvent.js";
 
 export  function addListController(addList){
     const showAddsButton = document.createElement("button");
@@ -22,7 +23,10 @@ async function handleShowAddsButtonClicked(addList){
             renderEmptyAdds(addList);
         }
     }catch (error) {
-        dispatchErrorEvent(error, addList);
+        dispatchEvent("error-loading-adds", {
+            message: messageError,
+            type: "error"
+        }, addList);
     }
     spinner.classList.toggle("hidden");
 }
@@ -41,6 +45,7 @@ function renderEmptyAdds(addList){
     addList.innerHTML=buildEmptyAdds();
 }
 
+/*
 function dispatchErrorEvent(messageError, addList){
     const event = new CustomEvent("error-loading-adds", {
         detail: {
@@ -51,4 +56,4 @@ function dispatchErrorEvent(messageError, addList){
 
     addList.dispatchEvent(event);
 }
-
+*/

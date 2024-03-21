@@ -1,4 +1,5 @@
-import { createUser } from "./signup-model";
+import { createUser } from "./signup-model.js";
+import { dispatchEvent } from "../dispatchEvent.js";
 
 export function singupController(register){
     register.addEventListener("submit", (event)=>{
@@ -6,59 +7,63 @@ export function singupController(register){
     
     handleSignupForSubmit(register);
     })
-};
 
-
-function handleSignupForSubmit(register){
     let errors = [];
 
-    if(!validateEmail(register)){
-        errors.push("El formato del email no es correcto");
+    function handleSignupForSubmit(register){
+        
+
+        if(!validateEmail(register)){
+            errors.push("El formato del email no es correcto");
+        }
+
+        if(!validatePassword(register)){
+            errors.push("Las contraseñas no son iguales");
+        }
+
+        showErrors(errors);
+
+        if(errors.length===0){
+            registerUser(register)
+        }
     }
 
-    if(!validatePassword(register)){
-        errors.push("Las contraseñas no son iguales");
+    function validateEmail(register){
+        const email = register.querySelector("#email").value
+        const regex = new RegExp (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+        
+        return regex.test(email);
     }
 
-    showErrors(errors);
-
-    if(errors.length===0){
-        registerUser(register)
+    function validatePassword(register){
+        const password = register.querySelector("#password");
+        const passwordVerification = register.querySelector("#password-confirmation");
+        console.log(password)
+        console.log(passwordVerification)
+      
+        return password.value === passwordVerification.value
+        
     }
-}
 
-function validateEmail(register){
-    const email = register.querySelector("#email")
-    const regex = new RegExp (/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    
-    return regex.test(email);
-}
+    function showErrors(){
+        errors.forEach(error => {
+        dispatchEvent("dispatch-error", error, register);
+        
+    })
+    };
 
-function validatePassword(register){
-    const password = register.querySelector("#password");
-    const passwordVerification = register.querySelector("#password-confirmation");
-    
-    return password.value!==passwordVerification.value
-       
-}
+    async function registerUser(register){
+        const email = register.querySelector("#email")
+        const password = register.querySelector("#password");
 
-function showErrors(){
-    errors.forEach(error => {
-    alert(error);
-})
-};
+        try {
+            await createUser(email.value, password.value)
+                alert("Usuario creado correctamente");
+                window.location.href = 'index.html';
+        }catch(error) {
+            alert(error);
+        }
 
-async function registerUser(register){
-    const email = register.querySelector("#email")
-    const password = register.querySelector("#password");
-
-    try {
-        await createUser(email.value, password.value)
-            alert("Usuario creado correctamente");
-            window.location.href= "index.html";
-    }catch(error) {
-        alert(error);
     }
 
 }
-

@@ -7,6 +7,8 @@
 </head>
 <body>
     <script type="module" src="signup.js"></script>
+    <section id="notifications"></section>
+    
     <form method="post" id="register">
         <h3>Registro de usuario</h3>
         <div>
@@ -19,7 +21,7 @@
         </div>
         <div>
         <label for="password-confirmation">Confirmar contraseña</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password-confirmation" name="password" required>
         </div>
         <button type="submit">Enviar</button>
 
