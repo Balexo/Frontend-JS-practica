@@ -1,4 +1,4 @@
-//import { loaderController } from "../loader/loader-controller.js";
+import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 import { loginUser } from "./login-model.js";
 
@@ -13,10 +13,10 @@ export const loginController = (loginForm) => {
 
 const submitLogin = async (loginForm) =>{
     const {email, password} = getLoginData(loginForm);
-    //const {showLoader, hideLoader} = loaderController(spinner)
+    const {showLoader, hideLoader} = loaderController(spinner)
 
     try {
-        //showLoader();
+        showLoader();
         dispatchEvent("startLoginUser", null, loginForm);
         const jwt = await loginUser(email, password);
         alert("User logged correctly.")
@@ -28,7 +28,7 @@ const submitLogin = async (loginForm) =>{
     }
     finally{
         dispatchEvent("finishLoginUser", null, loginForm)
-        //hideLoader();
+        hideLoader();
     }
 }
 
