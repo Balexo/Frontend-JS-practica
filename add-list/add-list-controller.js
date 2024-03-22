@@ -2,17 +2,8 @@ import { getAdds } from "./add-list-model.js";
 import { buildAdd, buildEmptyAdds } from "./add-list-view.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 
-export  function addListController(addList){
-    const showAddsButton = document.createElement("button");
-    showAddsButton.textContent="Mostrar anuncios";
-    addList.appendChild(showAddsButton);
-    showAddsButton.addEventListener("click", async ()=>{
+export async  function addListController(addList){
     
-    handleShowAddsButtonClicked(addList);
-}
-)
-}
-async function handleShowAddsButtonClicked(addList){
     const spinner = addList.querySelector(".lds-roller");
     try {
         spinner.classList.toggle("hidden");

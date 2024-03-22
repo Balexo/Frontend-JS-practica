@@ -1,5 +1,5 @@
-export async function loginUser(){
-    const url = 'http://localhost:8000/auth/register';
+export async function loginUser(email, password){
+    const url = 'http://localhost:8000/auth/login';
 
     let response;
     try {
@@ -18,7 +18,7 @@ export async function loginUser(){
         }
     
         if(response.ok){
-            return data.accesToken;
+            return data.accessToken;
         }
         
     } catch (error) {

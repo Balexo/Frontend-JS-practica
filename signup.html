@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="notifications/notification.css">
 </head>
 <body>
     <script type="module" src="signup.js"></script>
+
     <section id="notifications"></section>
     
     <form method="post" id="register">
         <h3>Registro de usuario</h3>
         <div>
+        <section id="spinner"></section>
         <label for="email">Email</label>
         <input type="text" id="email" name="email" required/>
         </div>

@@ -1,8 +1,6 @@
-export function dispatchEvent(eventName, messageEvent, element ){
+export function dispatchEvent(eventName, data, element ){
     const event = new CustomEvent(eventName, {
-        detail: {
-            message: messageEvent
-        }
+        detail: data
     });
     element.dispatchEvent(event);
 }

@@ -1,0 +1,26 @@
+
+.add-detail {
+    max-width: 460px;
+    margin: 20px auto;
+    border: solid 1px gray;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .add-detail img {
+    max-width: 200px;
+  }
+  
+  .add-detail-comments {
+    border: solid 1px gray;
+    padding: 0.5rem;
+  }
+  
+  .add-detail-comments h4 {
+    margin: 0;
+  }
+  
+  .add-detail-comment+.add-detail-comment {
+    margin-top: 1rem;
+  }

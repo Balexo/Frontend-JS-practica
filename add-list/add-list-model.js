@@ -4,7 +4,8 @@ export async function parseAdds(data){
         image: data.image,
         description: data.description,
         status: data.status,
-        price: data.price
+        price: data.price,
+        id: data.id,
     }))
 }
     /*return [

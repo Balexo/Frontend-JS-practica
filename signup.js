@@ -4,8 +4,12 @@ import { notificationController } from "./notifications/notifications-controller
 const register = document.querySelector("#register");
 const notifications = document.querySelector("#notifications");
 
-const { shownotifications } = notificationController(notifications);
+const { showNotifications} = notificationController(notifications);
 
-register.addEventListener("")
+register.addEventListener("signup-notification", (event)=>{
+    event.stopPropagation();
+    showNotifications(event.detail.message, event.detail.type)
+    
+})
 
 singupController(register);

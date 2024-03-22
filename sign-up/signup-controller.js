@@ -1,20 +1,25 @@
 import { createUser } from "./signup-model.js";
+import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 
+
 export function singupController(register){
+    const spinner = register.querySelector("#spinner");
+    const {showLoader, hideLoader} = loaderController(spinner);
+
     register.addEventListener("submit", (event)=>{
         event.preventDefault();
     
+    debugger;
     handleSignupForSubmit(register);
     })
 
-    let errors = [];
-
     function handleSignupForSubmit(register){
-        
+        let errors = [];
 
         if(!validateEmail(register)){
             errors.push("El formato del email no es correcto");
+            
         }
 
         if(!validatePassword(register)){
@@ -29,41 +34,55 @@ export function singupController(register){
     }
 
     function validateEmail(register){
-        const email = register.querySelector("#email").value
+        const email = register.querySelector("#email")
         const regex = new RegExp (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
         
-        return regex.test(email);
+        return regex.test(email.value);
     }
 
-    function validatePassword(register){
+     function validatePassword(register){
         const password = register.querySelector("#password");
         const passwordVerification = register.querySelector("#password-confirmation");
-        console.log(password)
-        console.log(passwordVerification)
-      
+       
         return password.value === passwordVerification.value
         
     }
 
-    function showErrors(){
+    function showErrors(errors){
         errors.forEach(error => {
-        dispatchEvent("dispatch-error", error, register);
-        
+        dispatchEvent("signup-notification", {
+            message: error,
+            type: "error"
+        }, register);
     })
+        console.log(errors)
     };
+    
 
     async function registerUser(register){
         const email = register.querySelector("#email")
         const password = register.querySelector("#password");
 
         try {
+            showLoader()
             await createUser(email.value, password.value)
-                alert("Usuario creado correctamente");
-                window.location.href = 'index.html';
+                
+                dispatchEvent("signup-notification", {
+                    message: "User registered successfuly",
+                    type: "success"
+                }, register)
+              
+                setTimeout(()=>{
+                    window.location.href = "../index.html"
+                }, 20000);
         }catch(error) {
-            alert(error);
+            dispatchEvent("signup-notification", {
+                message: error,
+                type: "error"
+            }, register)
+        }finally {
+            hideLoader();
         }
-
     }
 
 }
