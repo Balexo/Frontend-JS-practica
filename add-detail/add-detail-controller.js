@@ -34,8 +34,8 @@ export async function addDetailController(addDetail){
             const removeAddButton = addDetail.querySelector("#removeAddButton");
 
             removeAddButton.removeAttribute("disabled");
-            removeAddButton.addEventListener("click", ()=>{
-                removeAdd(add.id, token)})
+            removeAddButton.addEventListener("click", async ()=>{
+                await removeAdd(add.id, token)})
         }
     }
 

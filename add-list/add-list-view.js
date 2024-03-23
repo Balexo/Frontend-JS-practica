@@ -3,8 +3,8 @@ export function buildAdd(add){
     <a class="add" href="add-detail.html?addId=${add.id}">
     <h2>${add.name}</h2>
     <img src="${add.image}" />
-    <p id="description">${add.description}</p>
     <p>${add.status}: ${add.price}€</p>
+    <p id="description">${add.description}</p>
     </a>
     `
 }

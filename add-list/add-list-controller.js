@@ -27,6 +27,7 @@ async function renderAdds(adds, addList){
     
     adds.forEach(add => {
         const addItem=document.createElement("div");
+        addItem.classList.add("add-ref")
         addItem.innerHTML=buildAdd(add);
         addList.appendChild(addItem);
     })

@@ -1,26 +1,54 @@
 
-.add-detail {
-    max-width: 460px;
-    margin: 20px auto;
-    border: solid 1px gray;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+#addDetails {
   
-  .add-detail img {
-    max-width: 200px;
-  }
-  
-  .add-detail-comments {
-    border: solid 1px gray;
-    padding: 0.5rem;
-  }
-  
-  .add-detail-comments h4 {
-    margin: 0;
-  }
-  
-  .add-detail-comment+.add-detail-comment {
-    margin-top: 1rem;
-  }
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+#container{
+  width: 40%;
+  margin: 0 auto;
+}
+#addDetails button {
+  background-color: #ff6347;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#container .add-detail {
+  margin-bottom: 15px;
+}
+
+#container .add-detail h2 {
+  text-align: center;
+  color: #333;
+}
+
+#container .add-detail img {
+  width: 100%;
+  height: auto;
+}
+
+#container .add-detail p {
+  margin: 10px 0;
+}
