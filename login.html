@@ -5,20 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="login/login.css">
+    <link rel="stylesheet" href="loader/loader-style.css">
 </head>
 <body>
-    <script type="module" src="login.js"></script>
     <form id="login-form">
-        <div class="lds-roller hidden">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <section id="loader"></section>
+        <section id="spinner"></section>
         <div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email" required>
@@ -31,6 +23,7 @@
         <button type="submit">Enviar</button>
     </form>
     
+    <script type="module" src="login.js"></script>
 </body>
 
 </html>

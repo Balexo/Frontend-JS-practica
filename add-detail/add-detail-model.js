@@ -24,12 +24,15 @@ export async function getAddDetail(AddId){
 
     try {
         const response = await fetch(url);
+        if(!response.ok){
+            throw new Error("No existe este anuncio")
+        }
         const data = await response.json();
         const add = parseAdd(data)
         return add;
 
     } catch (error) {
-        throw new Error("Error obteniendo el anuncio")
+        throw new Error(`Error obteniendo el anuncio: ${error.message}`)
     }
 }
 

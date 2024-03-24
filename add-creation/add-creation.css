@@ -25,7 +25,7 @@ form label {
 }
 
 form input[type="text"], input[type="number"], form textarea, form select {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;

@@ -1,16 +1,15 @@
-import { createUser } from "./signup-model.js";
 import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
+import { createUser } from "./signup-model.js";
 
 
 export function singupController(register){
     const spinner = register.querySelector("#spinner");
     const {showLoader, hideLoader} = loaderController(spinner);
-
+    
     register.addEventListener("submit", (event)=>{
         event.preventDefault();
     
-    debugger;
     handleSignupForSubmit(register);
     })
 
@@ -65,16 +64,20 @@ export function singupController(register){
 
         try {
             showLoader()
-            await createUser(email.value, password.value)
+            await createUser(email.value, password.value) 
+            dispatchEvent("signup-notification", {
+                message: "Registrado exitosamente",
+                type: "success"
+            }, register)
+                        
+            console.log("PRE")
+            setTimeout(()=>{
+                window.location = "./index.html";
                 
-                dispatchEvent("signup-notification", {
-                    message: "User registered successfuly",
-                    type: "success"
-                }, register)
-              
-                setTimeout(()=>{
-                    window.location.href = "../index.html"
-                }, 20000);
+                console.log("IN")
+            }, 3000);
+            console.log("AFT")
+            
         }catch(error) {
             dispatchEvent("signup-notification", {
                 message: error,

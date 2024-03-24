@@ -1,6 +1,6 @@
 
 import { buildLoader } from "./loader-view.js";
-const loader = document.querySelector("#lds-roller");
+
 
 export function loaderController(loader){
 

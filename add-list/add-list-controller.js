@@ -1,12 +1,13 @@
 import { getAdds } from "./add-list-model.js";
 import { buildAdd, buildEmptyAdds } from "./add-list-view.js";
 import { dispatchEvent } from "../dispatchEvent.js";
+import { loadSpinner } from "../utils/loadingSpinner.js"; 
 
 export async  function addListController(addList){
     
-    const spinner = addList.querySelector(".lds-roller");
     try {
-        spinner.classList.toggle("hidden");
+        loadSpinner("load-spinner", addList)
+
         const adds = await getAdds();
         if(adds.length>0){
             renderAdds(adds, addList)
@@ -15,11 +16,12 @@ export async  function addListController(addList){
         }
     }catch (error) {
         dispatchEvent("error-loading-adds", {
-            message: messageError,
+            message: error,
             type: "error"
         }, addList);
+    }finally{
+        loadSpinner("hide-spinner", addList);
     }
-    spinner.classList.toggle("hidden");
 }
 
 

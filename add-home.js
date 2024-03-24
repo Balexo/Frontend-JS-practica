@@ -1,21 +1,39 @@
 import { addListController } from "./add-list/add-list-controller.js";
 import { notificationController } from "./notifications/notifications-controller.js";
 import { sessionController } from "./session/session-controller.js";
+import { loaderController } from "./loader/loader-controller.js";
 
-const addList = document.querySelector(".add-list");
-const notificationList = document.querySelector(".notification-list")
-const session = document.querySelector("#session");
+document.addEventListener("DOMContentLoaded", ()=>{
 
-sessionController(session);
+    const addList = document.querySelector(".add-list");
+    
+    const spinner = addList.querySelector("#spinner");
+    const { showLoader, hideLoader }= loaderController(spinner);
+    
+    addList.addEventListener("load-spinner",(event)=>{
+        showLoader();
+        event.stopPropagation();
+    });
 
-const { showNotifications } = notificationController(notificationList);
+    addList.addEventListener("hide-spinner", (event)=>{
+        hideLoader();
+        event.stopPropagation();
+    })
+    
+    const session = document.querySelector("#session");
+    sessionController(session);
+    
+    const notificationList = document.querySelector(".notification-list")
+    const { showNotifications } = notificationController(notificationList);
+    
+    addList.addEventListener("error-loading-adds", (event)=>{
+        showNotifications(event.detail.message, event.detail.type);
+        event.stopPropagation();
+    });
 
-addList.addEventListener("error-loading-adds", (event)=>{
-    showNotifications(event.detail.message, event.detail.type);
-    event.stopPropagation();
-})
-addListController(addList);
+    addListController(addList);
 
-window.addEventListener("offline", () =>{
-    showNotifications("Se ha perdido la conexión!!", "error");
+    window.addEventListener("offline", () =>{
+        showNotifications("Se ha perdido la conexión!!", "error");
+    })
 })

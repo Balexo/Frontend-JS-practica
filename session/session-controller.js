@@ -1,4 +1,4 @@
-import { buildAuthenticatedSession, buildSession } from "./session-view.js";
+import { buildAuthenticatedSession, buildSession} from "./session-view.js";
 
 
 export const sessionController = nav => {
@@ -6,11 +6,11 @@ export const sessionController = nav => {
         nav.innerHTML=buildAuthenticatedSession();
         const logoutButton = nav.querySelector("button");
         logoutButton.addEventListener("click", ()=>{
-            localStorage.remove("token");
+            localStorage.removeItem('token');
             sessionController(nav);
         })
     }else{
-        buildSession();
+        nav.innerHTML= buildSession();
     }
 }
 function isUserLoggedIn(){

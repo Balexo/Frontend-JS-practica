@@ -1,24 +1,29 @@
+import { loadSpinner } from "../utils/loadingSpinner.js";
 import { getAddDetail, getUserData, deleteAdd } from "./add-detail-model.js";
 import { buildAddDetail } from "./add-detail-view.js";
 
-export async function addDetailController(addDetail){
 
+export async function addDetailController(addDetail){
+    
     const params = new URLSearchParams(window.location.search)
     const addId = params.get("addId");
     if(!addId){
-        window.location.href = "./index.html";
+        alert("No existe este anuncio")
+        window.location= "./index.html";
     }
     goBackButton(addDetail);
 
     try {
-        const add = await getAddDetail(addId)
+        loadSpinner("load-spinner", addDetail);
+        const add = await getAddDetail(addId);
         const container = addDetail.querySelector("#container");
-        container.innerHTML = buildAddDetail(add)
+        container.innerHTML = buildAddDetail(add);
         handleRemoveAddButton(addDetail, add);
     } catch (error) {
         alert(error)
+    }finally{
+        loadSpinner("hide-spinner", addDetail);
     }
-
     function goBackButton(addDetail){
         const backButton = addDetail.querySelector("#goBack");
         backButton.addEventListener("click", () =>{
@@ -42,15 +47,13 @@ export async function addDetailController(addDetail){
     async function removeAdd(addId, token){
         if(window.confirm("Seguro que quieres borrar el Add")){
             try{
-                console.log('pPREEEEE deleteAdd completed')
+                
                 await deleteAdd(addId, token)
-                console.log('deleteAdd completed')
-                setTimeout(()=>{
-                    console.log("Inside setTimeout")
-                    window.location.href = 'index.html'
-                },2000)
+                alert("Anuncio borrado")
+                //setTimeout(()=>{
+                window.location = "./index.html";
+                //},2000)
             }catch(error){
-                console.log("erro in deleted", error)
                 alert(error)
             }
         }

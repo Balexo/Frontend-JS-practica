@@ -1,5 +1,5 @@
-import { singupController } from "./sign-up/signup-controller.js";
 import { notificationController } from "./notifications/notifications-controller.js";
+import { singupController } from "./sign-up/signup-controller.js";
 
 const register = document.querySelector("#register");
 const notifications = document.querySelector("#notifications");

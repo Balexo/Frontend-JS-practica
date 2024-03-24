@@ -12,6 +12,9 @@ nav {
     text-align: right;
 }
 
+nav ul{
+    list-style-type: none;
+}
 nav a {
     color: #fff;
     margin: 0 15px;
@@ -42,10 +45,15 @@ nav button {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 30%;
+    width: 15%;
     margin: 15px 0;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.add-ref a {
+    text-decoration: none; 
+    color: black; 
 }
 
 .add-ref img {
