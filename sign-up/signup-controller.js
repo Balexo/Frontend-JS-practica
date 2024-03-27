@@ -1,12 +1,19 @@
 import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 import { createUser } from "./signup-model.js";
+import { goBackButton } from "../utils/button.js";
 
 
 export function singupController(register){
     const spinner = register.querySelector("#spinner");
     const {showLoader, hideLoader} = loaderController(spinner);
-    
+
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        const backButton = register.querySelector("#back-button");
+        goBackButton(backButton);
+    });
+
     register.addEventListener("submit", (event)=>{
         event.preventDefault();
     
@@ -71,11 +78,8 @@ export function singupController(register){
             }, register)
                         
             console.log("PRE")
-            setTimeout(()=>{
-                window.location = "./index.html";
-                
-                console.log("IN")
-            }, 3000);
+            await new Promise(resolve => setTimeout(resolve, 10000));
+        window.location = "./index.html";
             console.log("AFT")
             
         }catch(error) {

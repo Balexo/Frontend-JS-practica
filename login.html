@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="loader/loader-style.css">
 </head>
 <body>
+    
     <form id="login-form">
-        <section id="loader"></section>
+        <section class="lds-roller">
+            <div></div>
+        </section>
         <section id="spinner"></section>
+        
+        <button id="back-button">Volver atrás</button>
+        
         <div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email" required>
@@ -23,7 +29,9 @@
         <button type="submit">Enviar</button>
     </form>
     
-    <script type="module" src="login.js"></script>
+    
+        <script type="module" src="login.js"></script>
+    
 </body>
 
 </html>

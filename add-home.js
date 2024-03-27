@@ -1,5 +1,5 @@
 import { addListController } from "./add-list/add-list-controller.js";
-import { notificationController } from "./notifications/notifications-controller.js";
+import { notificationController } from "./notifications/notifications-controller.js"; 
 import { sessionController } from "./session/session-controller.js";
 import { loaderController } from "./loader/loader-controller.js";
 

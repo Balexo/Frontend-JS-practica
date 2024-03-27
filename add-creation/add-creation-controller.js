@@ -1,13 +1,17 @@
 import { loadSpinner } from "../utils/loadingSpinner.js";
 import { createAdd } from "./add-creation-model.js";
+import { goBackButton } from "../utils/button.js";
+import { dispatchEvent } from "../dispatchEvent.js"; 
 
 
 export function addCreationController(addCreation){
     
-    submitForm(addCreation)
-    
+    const backButton = addCreation.querySelector("#back-button");
+    goBackButton(backButton); 
+
     addCreation.addEventListener("submit", (event)=>{
-        event.preventDefault()
+        event.preventDefault();
+
         submitForm(addCreation);
     });
 
@@ -27,13 +31,22 @@ export function addCreationController(addCreation){
     async function submitForm(addCreation){
        
         try {
+         
             loadSpinner("load-spinner", addCreation);
             const message = collectDataFromForm(addCreation);
             await createAdd(message);
-            alert("Producto creado correctamente");
-            setTimeout(() => {
+            debugger
+            
+            dispatchEvent("notification-ad-created", {
+              message: "Anuncio creado exitosamente",
+              type: "sucess"  
+            }, addCreation );  
+            setTimeout(() => {       
                 window.location = "./index.html";
-            }, 2000);
+            }, 8000);
+          
+            //alert("Producto creado correctamente");
+           
         } catch (error) {
             alert(error);
         }finally{

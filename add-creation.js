@@ -1,14 +1,22 @@
 import { loaderController } from "./loader/loader-controller.js";
 import { addCreationController } from "./add-creation/add-creation-controller.js";
+import { notificationController } from "./notifications/notifications-controller.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const addCreation = document.querySelector("#addCreation");
     const token = localStorage.getItem("token");
+    const notification = addCreation.querySelector("#notification")
+    const { showNotifications} =notificationController(notification);
+
+    if(!token){
+        alert("Debes estar registrado para poder crear un anuncio")
+        window.location.href="index.html";
+    }
 
     const spinner = addCreation.querySelector("#spinner")
-    debugger
+  
     const {showLoader, hideLoader} = loaderController(spinner)
-    debugger
+  
 
     addCreation.addEventListener("load-spinner", (event)=>{
         showLoader();
@@ -17,15 +25,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     addCreation.addEventListener("hide-spinner", (event)=>{
         hideLoader();
-        event.stopImmediatePropagation();
+        event.stopPropagation();
     })
 
-    if(!token){
-        alert("Debes estar registrado para poder crear un anuncio")
-        window.location.href="index.html";
-    }
+    addCreation.addEventListener("notification-ad-created", (event)=>{
+        event.stopPropagation();
+        showNotifications(event.detail.message, event.detail.type);
+    }  )
 
     addCreationController(addCreation);
-
     
 })

@@ -1,24 +1,25 @@
 import { loginController } from "./login/login-controller.js";
 import { loaderController } from "./loader/loader-controller.js";
 
+
 document.addEventListener("DOMContentLoaded", ()=>{
     const loginForm = document.querySelector("#login-form");
-    
-    const spinner= loginForm.querySelector("#spinner")
-    const {showLoader, hideLoader}=loaderController(loginForm);
+    const initialSpinner = document.querySelector(".lds-roller");
+    initialSpinner.classList.add("hidden");
 
-    loginForm.addEventListener("load-spinner", (event)=>{
+    const {showLoader, hideLoader}=loaderController(loginForm);
+  
+    loginForm.addEventListener("load-spinner", (event)=>{ //Listener cargar 2º spinner
         debugger
         showLoader();
-        event.stopImmediatePropagation();
+        event.stopPropagation();
     })
 
-    loginForm.addEventListener("hide-loader", (event)=>{
-   
+    spinner.addEventListener("hide-spinner", (event)=>{ //Listener ocultar 2º spinner
         hideLoader();
         event.stopPropagation();
     })
-  
+       
     loginController(loginForm);
 
 });

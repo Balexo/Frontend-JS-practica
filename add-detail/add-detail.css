@@ -35,6 +35,23 @@ body {
   cursor: pointer;
 }
 
+#addDetails button {
+  background-color: #ff6347;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button#removeAddButton:disabled {
+  background-color: grey;
+}
+
 #container .add-detail {
   margin-bottom: 15px;
 }

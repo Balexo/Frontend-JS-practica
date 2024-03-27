@@ -4,15 +4,27 @@ import { buildAddDetail } from "./add-detail-view.js";
 
 
 export async function addDetailController(addDetail){
-    
-    const params = new URLSearchParams(window.location.search)
+
+    goBackButton(addDetail);
+
+    const params = new URLSearchParams(window.location.search);
+    const token = localStorage.getItem("token");
     const addId = params.get("addId");
+    const removeAddButton = addDetail.querySelector("#removeAddButton");
+
     if(!addId){
         alert("No existe este anuncio")
         window.location= "./index.html";
-    }
-    goBackButton(addDetail);
-
+    }else{
+        buildingAddDetail(addDetail);
+    };
+    
+    removeAddButton.addEventListener("click", ()=>{
+        removeAdd(addDetail);
+    });
+     
+    
+    async function buildingAddDetail(addDetail){
     try {
         loadSpinner("load-spinner", addDetail);
         const add = await getAddDetail(addId);
@@ -24,6 +36,7 @@ export async function addDetailController(addDetail){
     }finally{
         loadSpinner("hide-spinner", addDetail);
     }
+}
     function goBackButton(addDetail){
         const backButton = addDetail.querySelector("#goBack");
         backButton.addEventListener("click", () =>{
@@ -32,11 +45,11 @@ export async function addDetailController(addDetail){
     }
 
     async function handleRemoveAddButton(addDetail, add){
-        const token = localStorage.getItem("token");
+        
         const userData = await getUserData(token);
 
         if(add.userId === userData.id){
-            const removeAddButton = addDetail.querySelector("#removeAddButton");
+            
 
             removeAddButton.removeAttribute("disabled");
             removeAddButton.addEventListener("click", async ()=>{
@@ -47,14 +60,13 @@ export async function addDetailController(addDetail){
     async function removeAdd(addId, token){
         if(window.confirm("Seguro que quieres borrar el Add")){
             try{
-                
-                await deleteAdd(addId, token)
-                alert("Anuncio borrado")
-                //setTimeout(()=>{
+                console.log(addId);
+                await deleteAdd(addId, token);
                 window.location = "./index.html";
-                //},2000)
+                alert("Anuncio borrado correctamente");
+              
             }catch(error){
-                alert(error)
+                console.log(error)
             }
         }
     }

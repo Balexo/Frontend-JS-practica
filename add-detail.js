@@ -1,8 +1,8 @@
 import { addDetailController } from "./add-detail/add-detail-controller.js";
 import { loaderController } from "./loader/loader-controller.js";
 
-
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", (event) =>{
+    event.preventDefault();
     const addDetail = document.querySelector("#addDetails");
     const spinner = document.querySelector('#spinner')
     const { showLoader, hideLoader} = loaderController(spinner)

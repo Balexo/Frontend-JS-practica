@@ -16,6 +16,12 @@ form#register {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+button#back-button {
+    position: absolute;
+    top: 0%; 
+    left: 10%;
+}
+
 form#register h3 {
     text-align: center;
     color: #333;
