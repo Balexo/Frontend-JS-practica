@@ -16,21 +16,27 @@ export const loginController = (loginForm) => {
         const {email, password} = getLoginData(loginForm);
 
         try {
-            loadSpinner("load-spinner", loginForm); //Segundo spinner
-            dispatchEvent("startLoginUser", null, loginForm);
+            loadSpinner("load-spinner", loginForm); 
             const jwt = await loginUser(email, password);
             localStorage.setItem("token", jwt);
+            loadSpinner("hide-spinner", loginForm) 
+            dispatchEvent("loginUser", {
+                message: "Usuario registrado correctamente",
+                type: "success"
+            }, loginForm);
+            //alert("logeado correctamente")
             setTimeout(() => {
                 window.location = "./index.html";
             }, 3000);
-            alert("logeado correctamente")
 
         } catch (error) {
-            alert(error)
+            dispatchEvent("loginUser",{
+            message: "Error en el registro del usuario",
+            type: "error"
+        }, loginForm)
         }
         finally{
-            dispatchEvent("finishLoginUser", null, loginForm)
-            loadSpinner("hide-spinner", loginForm) //Segundo spinner
+            loadSpinner("hide-spinner", loginForm) 
         }
 }
 

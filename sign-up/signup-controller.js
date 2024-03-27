@@ -2,6 +2,7 @@ import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 import { createUser } from "./signup-model.js";
 import { goBackButton } from "../utils/button.js";
+import { dispatchEvent } from "../dispatchEvent.js"; 
 
 
 export function singupController(register){
@@ -78,8 +79,11 @@ export function singupController(register){
             }, register)
                         
             console.log("PRE")
-            await new Promise(resolve => setTimeout(resolve, 10000));
-        window.location = "./index.html";
+            setTimeout(()=>{
+                console.log("IN")
+                window.location = "./index.html";
+                
+            }, 10000);
             console.log("AFT")
             
         }catch(error) {
