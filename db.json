@@ -1,0 +1,653 @@
+{
+  "adds": [
+    {
+      "id": 0,
+      "userId": 1,
+      "name": "Computer",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/tres_srpmzv.jpg",
+      "description": "Ordenador MSI",
+      "status": "Venta",
+      "price": 150
+    },
+    {
+      "id": 1,
+      "userId": 10,
+      "name": "Macetero",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/un_zaghax.jpg",
+      "description": "Macetero de 35L con tonalidades marrón",
+      "status": "Venta",
+      "price": 35
+    },
+    {
+      "id": 2,
+      "userId": 11,
+      "name": "Mesa escritorio",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/dous_sgidw5.jpg",
+      "description": "Mesa pino barnizada",
+      "status": "Venta",
+      "price": 190
+    },
+    {
+      "name": "Silla",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/tres_srpmzv.jpg",
+      "description": "Silla ergonómica 8h",
+      "status": "sales",
+      "price": "220",
+      "userId": 16,
+      "updatedAt": "2024-03-22T11:03:48.830Z",
+      "id": 3
+    },
+    {
+      "name": "¨Batería",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/un_zaghax.jpg",
+      "description": "Batería electrónica completa marca Thomann, Millenium MPS-600. Platos y pads con acabado en goma. Manual de uso e instrucciones de montaje originales. Buen estado, poco uso. Ver contenido completo en última foto. Recogida ocupa un trapecio de 90cm de ancho mayor, 25 de ancho menor y 80 de fondo.",
+      "status": "Compra",
+      "price": "250",
+      "userId": 16,
+      "updatedAt": "2024-03-22T11:49:08.299Z",
+      "id": 5
+    },
+    {
+      "name": "Pala pádel",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/tres_srpmzv.jpg",
+      "description": "PALA PADEL HEAD DELTA ELITE",
+      "status": "Venta",
+      "price": "70",
+      "userId": 16,
+      "updatedAt": "2024-03-22T11:55:47.155Z",
+      "id": 6
+    },
+    {
+      "name": "Bicicleta Trek de 29 .Talla M L",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/tres_srpmzv.jpg",
+      "description": "Bicicleta en buen estado con amortiguador rockshox .",
+      "status": "Venta",
+      "price": "400",
+      "userId": 16,
+      "updatedAt": "2024-03-22T12:00:28.540Z",
+      "id": 7
+    },
+    {
+      "name": "Estufa de leña",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/tres_srpmzv.jpg",
+      "description": "Estufa leña de 39cm de ancho por 66cm de largo. Perfecta para calentar una vivienda practicamente de 80 m cuadrados ella sola. Tubos de 2,40 m incluidos.",
+      "status": "Venta",
+      "price": "200",
+      "userId": 16,
+      "updatedAt": "2024-03-22T12:03:32.183Z",
+      "id": 8
+    },
+    {
+      "name": "Pantalón vaquero",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/dous_sgidw5.jpg",
+      "description": "Pantalón vaquero Levis",
+      "status": "Venta",
+      "price": "205",
+      "userId": 16,
+      "updatedAt": "2024-03-22T13:18:53.423Z",
+      "id": 9
+    },
+    {
+      "name": "Tennis Munich",
+      "image": "https://res.cloudinary.com/dvchdbgnq/image/upload/v1711184501/articles/un_zaghax.jpg",
+      "description": "tennis",
+      "status": "Venta",
+      "price": "60",
+      "userId": 16,
+      "updatedAt": "2024-03-22T13:20:45.018Z",
+      "id": 10
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "564",
+      "status": "Venta",
+      "price": "23",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:10:16.423Z",
+      "id": 11
+    },
+    {
+      "name": "Silla",
+      "image": "56",
+      "description": "re",
+      "status": "Venta",
+      "price": "4",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:10:29.861Z",
+      "id": 12
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "xv",
+      "status": "Venta",
+      "price": "34",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:38:19.437Z",
+      "id": 13
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "456",
+      "status": "Venta",
+      "price": "03",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:40:50.117Z",
+      "id": 14
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "3502",
+      "status": "Venta",
+      "price": "36",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:48:21.114Z",
+      "id": 15
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "dsfg",
+      "status": "Venta",
+      "price": "4e4",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:51:08.358Z",
+      "id": 16
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "123",
+      "status": "Venta",
+      "price": "43",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:53:47.908Z",
+      "id": 17
+    },
+    {
+      "name": "Silla",
+      "image": "4353",
+      "description": "34534",
+      "status": "Venta",
+      "price": "23",
+      "userId": 3,
+      "updatedAt": "2024-04-01T19:55:31.745Z",
+      "id": 18
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "sxdc",
+      "status": "Venta",
+      "price": "43",
+      "userId": 3,
+      "updatedAt": "2024-04-02T07:37:34.114Z",
+      "id": 21
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "asdf",
+      "status": "Venta",
+      "price": "32",
+      "userId": 3,
+      "updatedAt": "2024-04-09T08:07:02.392Z",
+      "id": 22
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "wer",
+      "status": "Venta",
+      "price": "63",
+      "userId": 3,
+      "updatedAt": "2024-04-09T08:14:21.169Z",
+      "id": 23
+    },
+    {
+      "name": "Silla",
+      "image": "asfd",
+      "description": "asfd",
+      "status": "Venta",
+      "price": "34",
+      "userId": 3,
+      "updatedAt": "2024-04-09T08:21:38.685Z",
+      "id": 24
+    },
+    {
+      "name": "Silla",
+      "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
+      "description": "sf",
+      "status": "Venta",
+      "price": "23",
+      "userId": 3,
+      "updatedAt": "2024-04-09T08:21:55.957Z",
+      "id": 25
+    },
+    {
+      "name": "asfd",
+      "image": "43",
+      "description": "34",
+      "status": "Venta",
+      "price": "3",
+      "userId": 3,
+      "updatedAt": "2024-04-09T08:22:33.587Z",
+      "id": 26
+    }
+  ],
+  "users": [
+    {
+      "username": "asf@as.com",
+      "password": "$2b$10$UbjjIQ9g3bA1BdxN9QyZauEp2XKuYVDwENT0mGq68bd0MFDtInEfy",
+      "id": 1
+    },
+    {
+      "username": "asaf@as.com",
+      "password": "$2b$10$QRxjBu8tXyW6J7SwLSmv2OK85CSlZwAkN5NB0Exxw3d4OKNRd3DLO",
+      "id": 2
+    },
+    {
+      "username": "oscar.vallejo@outlook.com",
+      "password": "$2b$10$QRxjBu8tXyW6J7SwLSmv2OK85CSlZwAkN5NB0Exxw3d4OKNRd3DLO",
+      "id": 3
+    },
+    {
+      "username": "test@as.com",
+      "password": "$2b$10$QRxjBu8tXyW6J7SwLSmv2Oyup1sQ2NSksHp9biSpVyptxFRdJrt0a",
+      "id": 4
+    },
+    {
+      "username": "asfd@mas.es",
+      "password": "$2b$10$QRxjBu8tXyW6J7SwLSmv2ObHEPf5hrDiNUrevQ70ridh8eFSz9OjG",
+      "id": 5
+    },
+    {
+      "username": "asf1@as.com",
+      "password": "$2b$10$l3GgacTKRu/eGHB7YDySzexsBu.SMD6OTW5IK2ld3DFyMde92UvJG",
+      "id": 6
+    },
+    {
+      "username": "test1@as.com",
+      "password": "$2b$10$l3GgacTKRu/eGHB7YDySzexsBu.SMD6OTW5IK2ld3DFyMde92UvJG",
+      "id": 7
+    },
+    {
+      "username": "tes1t@as.com",
+      "password": "$2b$10$l3GgacTKRu/eGHB7YDySzexsBu.SMD6OTW5IK2ld3DFyMde92UvJG",
+      "id": 8
+    },
+    {
+      "username": "test4@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 9
+    },
+    {
+      "username": "test5@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 10
+    },
+    {
+      "username": "test6@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 11
+    },
+    {
+      "username": "test7@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 12
+    },
+    {
+      "username": "test8@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 13
+    },
+    {
+      "username": "test9@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 14
+    },
+    {
+      "username": "test10@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 15
+    },
+    {
+      "username": "test11@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 16
+    },
+    {
+      "username": "test12@gmail.com",
+      "password": "$2b$10$5BwG2l2psWRJx9cvCJWMU.iK/wfhUIjkl/NdOgozimAOFAfEecUsm",
+      "id": 17
+    },
+    {
+      "username": "test121za@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 18
+    },
+    {
+      "username": "test11a@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 19
+    },
+    {
+      "username": "test55@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 20
+    },
+    {
+      "username": "test52@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 21
+    },
+    {
+      "username": "test6e@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 22
+    },
+    {
+      "username": "test121@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 23
+    },
+    {
+      "username": "test1aa1@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 24
+    },
+    {
+      "username": "osccvxar.vallejo@outlook.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 25
+    },
+    {
+      "username": "test1144@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 26
+    },
+    {
+      "username": "test8ddd@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 27
+    },
+    {
+      "username": "testsfa6@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 28
+    },
+    {
+      "username": "test6xcv@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 29
+    },
+    {
+      "username": "test6cvx@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 30
+    },
+    {
+      "username": "testcxv5@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 31
+    },
+    {
+      "username": "testxcxc5@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 32
+    },
+    {
+      "username": "testsdffd6@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 33
+    },
+    {
+      "username": "testcx5@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 34
+    },
+    {
+      "username": "testcxxvc6@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 35
+    },
+    {
+      "username": "test5cvxb@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 36
+    },
+    {
+      "username": "test8weew@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 37
+    },
+    {
+      "username": "test5gfgf@gmail.com",
+      "password": "$2b$10$wwZp1r5CMpNUcvJPfvD.1u9mSTtKinR3TpDgwnKcN/Y4lToYxAVBe",
+      "id": 38
+    },
+    {
+      "username": "oscar@gmail.com",
+      "password": "$2b$10$uLox95Jxco9zw40X2TNM7eeK1xSNdYB2vlseFY4f1j9Sm91JLDC6K",
+      "id": 39
+    },
+    {
+      "username": "oasfd@gmail.com",
+      "password": "$2b$10$uLox95Jxco9zw40X2TNM7eeK1xSNdYB2vlseFY4f1j9Sm91JLDC6K",
+      "id": 40
+    },
+    {
+      "username": "oscar.vallejo@outasfalook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 41
+    },
+    {
+      "username": "oscar.valasdlejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 42
+    },
+    {
+      "username": "oscar.va22llejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 43
+    },
+    {
+      "username": "oscar.vallej00o@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 44
+    },
+    {
+      "username": "asdoscar.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 45
+    },
+    {
+      "username": "oscar.valasflejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 46
+    },
+    {
+      "username": "oscar.valldsejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 47
+    },
+    {
+      "username": "oscaasdfr.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 48
+    },
+    {
+      "username": "oscaasr.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 49
+    },
+    {
+      "username": "oscaasfdr.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 50
+    },
+    {
+      "username": "oscaras.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 51
+    },
+    {
+      "username": "oscaasdasfdfr.vallejo@outlook.com",
+      "password": "$2b$10$8lPE2H5ACBTryPA.lYZireN1ptouuJC6pXlI2cbR.2kWO.37JZU/y",
+      "id": 52
+    },
+    {
+      "username": "oscar.vallejo11@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 53
+    },
+    {
+      "username": "oscar.vallejo12356@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 54
+    },
+    {
+      "username": "oscar.valAAejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 55
+    },
+    {
+      "username": "oscar11@gmail.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 56
+    },
+    {
+      "username": "dfgoscar.vallejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 57
+    },
+    {
+      "username": "oscar.vasfdallejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 58
+    },
+    {
+      "username": "oscar.vall663ejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 59
+    },
+    {
+      "username": "oscar.va69633.llejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 60
+    },
+    {
+      "username": "oscar.valldfgejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 61
+    },
+    {
+      "username": "oscar.vallejsfasdfo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 62
+    },
+    {
+      "username": "oscar.vadsfdsfllejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 63
+    },
+    {
+      "username": "oscar.vdfsaallejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 64
+    },
+    {
+      "username": "osaaaaaaaaaaacar.vallejo@outlook.com",
+      "password": "$2b$10$H9c6I7.t8t3Sovj88AKJ5OExW36XZFadaN/yoO/UEBXj4194eFf3u",
+      "id": 65
+    },
+    {
+      "username": "oscar.vallejo1111111111111@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 66
+    },
+    {
+      "username": "oscar.vallejo12121212@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 67
+    },
+    {
+      "username": "oscar.vallejasdfdsasfdao@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 68
+    },
+    {
+      "username": "oscar.vallejoasfddsfafds@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 69
+    },
+    {
+      "username": "oscaasfdsafar.vallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 70
+    },
+    {
+      "username": "oscar.vallejoadsfafafdsa@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 71
+    },
+    {
+      "username": "oscar.vallejoasfdasfdasfd@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 72
+    },
+    {
+      "username": "oscar.vallejasfsafo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 73
+    },
+    {
+      "username": "oscASFDDFASDFar.vallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 74
+    },
+    {
+      "username": "oscar.vasfasallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 75
+    },
+    {
+      "username": "oscar.vallesaffsdafsjo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 76
+    },
+    {
+      "username": "oscar.vasfdasfdallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 77
+    },
+    {
+      "username": "oscar.valldsdsdasdaejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 78
+    },
+    {
+      "username": "oscar.vasdafsdllejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 79
+    },
+    {
+      "username": "oscar.vallesadfsdfjo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 80
+    },
+    {
+      "username": "oscar.vasfdasfallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 81
+    },
+    {
+      "username": "oscar.vasdfaallejo@outlook.com",
+      "password": "$2b$10$jCb5y0DrqOKjK5Ug7QL/Q.aR4SvJmm.9IyY61VJA8wF8Jtztn4e4u",
+      "id": 82
+    }
+  ]
+}

@@ -39,16 +39,19 @@ export function addCreationController(addCreation){
             
             dispatchEvent("notification-ad-created", {
               message: "Anuncio creado exitosamente",
-              type: "sucess"  
+              type: "success"  
             }, addCreation );  
             setTimeout(() => {       
                 window.location = "./index.html";
-            }, 8000);
+            }, 3000);
           
             //alert("Producto creado correctamente");
            
         } catch (error) {
-            alert(error);
+            dispatchEvent("notification-ad-created",{
+                message: error,
+                type: "error"
+            }, addCreation);
         }finally{
             loadSpinner("hide-spinner", addCreation);
         }

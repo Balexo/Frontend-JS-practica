@@ -20,11 +20,15 @@ export const createAdd = async(addDetails) =>{
                 "Content-type": "application/json",
                 "Authorization": `Bearer ${token}`
             }
-        });
+        })
+        console.log(response);
 
         if(!response.ok){
             const data = await response.json();
             throw new Error(data.message);
+        }else{
+            const data = await response.json();
+            console.log(data);
         }
     }catch (error){
         if(error.message){

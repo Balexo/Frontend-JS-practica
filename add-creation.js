@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const addCreation = document.querySelector("#addCreation");
     const token = localStorage.getItem("token");
     const notification = addCreation.querySelector("#notification")
-    const { showNotifications} =notificationController(notification);
+    const { showNotification } =notificationController(notification);
 
     if(!token){
         alert("Debes estar registrado para poder crear un anuncio")
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     addCreation.addEventListener("notification-ad-created", (event)=>{
         event.stopPropagation();
-        showNotifications(event.detail.message, event.detail.type);
-    }  )
+        showNotification(event.detail.message, event.detail.type);
+    });
 
     addCreationController(addCreation);
     

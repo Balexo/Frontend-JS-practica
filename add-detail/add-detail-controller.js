@@ -1,30 +1,22 @@
 import { loadSpinner } from "../utils/loadingSpinner.js";
 import { getAddDetail, getUserData, deleteAdd } from "./add-detail-model.js";
 import { buildAddDetail } from "./add-detail-view.js";
-
+import { dispatchEvent } from "../dispatchEvent.js"; 
+import { goBackButton } from "../utils/button.js";
+ 
 
 export async function addDetailController(addDetail){
 
+    const params = new URLSearchParams(window.location.search);
+    const addId = params.get("addId");
+    const notifications = addDetail.querySelector("#notification");
+    
+    if(!addId){
+        window.location= "./index.html";
+    } 
+
     goBackButton(addDetail);
 
-    const params = new URLSearchParams(window.location.search);
-    const token = localStorage.getItem("token");
-    const addId = params.get("addId");
-    const removeAddButton = addDetail.querySelector("#removeAddButton");
-
-    if(!addId){
-        alert("No existe este anuncio")
-        window.location= "./index.html";
-    }else{
-        buildingAddDetail(addDetail);
-    };
-    
-    removeAddButton.addEventListener("click", ()=>{
-        removeAdd(addDetail);
-    });
-     
-    
-    async function buildingAddDetail(addDetail){
     try {
         loadSpinner("load-spinner", addDetail);
         const add = await getAddDetail(addId);
@@ -32,39 +24,47 @@ export async function addDetailController(addDetail){
         container.innerHTML = buildAddDetail(add);
         handleRemoveAddButton(addDetail, add);
     } catch (error) {
-        alert(error)
+        dispatchEvent("ad-no-exist", {
+            message :"El anuncio no existe",
+            type: "error"
+        }, notifications);
+        setTimeout(() => {
+            window.location= "./index.html";
+        }, 2000); 
     }finally{
         loadSpinner("hide-spinner", addDetail);
     }
-}
-    function goBackButton(addDetail){
-        const backButton = addDetail.querySelector("#goBack");
-        backButton.addEventListener("click", () =>{
-            window.history.back()
-        })
-    }
-
+    
     async function handleRemoveAddButton(addDetail, add){
-        
+        const token = localStorage.getItem("token");
         const userData = await getUserData(token);
-
-        if(add.userId === userData.id){
-            
-
+        
+        if(add.userId === userData.id){    
+            const removeAddButton = addDetail.querySelector("#removeAddButton");
             removeAddButton.removeAttribute("disabled");
-            removeAddButton.addEventListener("click", async ()=>{
-                await removeAdd(add.id, token)})
+            removeAddButton.addEventListener("click", ()=>{
+                removeAdd(add.id, token)})
         }
     }
 
     async function removeAdd(addId, token){
-        if(window.confirm("Seguro que quieres borrar el Add")){
+        if(window.confirm("Seguro que quieres borrar el anuncio?")){
             try{
-                console.log(addId);
+                debugger
+                
+                debugger
+                dispatchEvent("add-deleted", {
+                    message: "Anuncio borrado correctamente",
+                    type: "success"
+                }, notifications);
+                console.log("Anuncio presetTimeout")
+                setTimeout(() => {
+                    console.log("Anuncio insetTimeout")
+                    window.location = "./index.html";
+                }, 3000);
                 await deleteAdd(addId, token);
-                window.location = "./index.html";
-                alert("Anuncio borrado correctamente");
-              
+                console.log("Anuncio postsetTimeout")
+            
             }catch(error){
                 console.log(error)
             }

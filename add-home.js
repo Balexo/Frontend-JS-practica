@@ -24,16 +24,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     sessionController(session);
     
     const notificationList = document.querySelector(".notification-list")
-    const { showNotifications } = notificationController(notificationList);
+    const { showNotification } = notificationController(notificationList);
     
     addList.addEventListener("error-loading-adds", (event)=>{
-        showNotifications(event.detail.message, event.detail.type);
+        showNotification(event.detail.message, event.detail.type);
         event.stopPropagation();
     });
 
     addListController(addList);
 
     window.addEventListener("offline", () =>{
-        showNotifications("Se ha perdido la conexión!!", "error");
+        showNotification("Se ha perdido la conexión!!", "error");
     })
 })

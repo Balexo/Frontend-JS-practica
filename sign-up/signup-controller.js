@@ -2,13 +2,10 @@ import { loaderController } from "../loader/loader-controller.js";
 import { dispatchEvent } from "../dispatchEvent.js";
 import { createUser } from "./signup-model.js";
 import { goBackButton } from "../utils/button.js";
-import { dispatchEvent } from "../dispatchEvent.js"; 
-
 
 export function singupController(register){
     const spinner = register.querySelector("#spinner");
     const {showLoader, hideLoader} = loaderController(spinner);
-
 
     document.addEventListener("DOMContentLoaded", ()=>{
         const backButton = register.querySelector("#back-button");
@@ -78,13 +75,13 @@ export function singupController(register){
                 type: "success"
             }, register)
                         
-            console.log("PRE")
-            setTimeout(()=>{
-                console.log("IN")
+            console.log("PRE setTiemout")
+            setTimeout(() => {
+                console.log("IN setTiemout")
                 window.location = "./index.html";
-                
-            }, 10000);
-            console.log("AFT")
+            }, 4000);
+            
+            console.log("OUT setTiemout");
             
         }catch(error) {
             dispatchEvent("signup-notification", {
@@ -92,8 +89,11 @@ export function singupController(register){
                 type: "error"
             }, register)
         }finally {
+            console.log("finally setTiemout");
             hideLoader();
         }
     }
 
 }
+
+console.log("FUERA")

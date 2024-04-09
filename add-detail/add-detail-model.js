@@ -56,19 +56,18 @@ export async function deleteAdd(addId, token){
     const url = `http://localhost:8000/api/adds/${addId}`;
 
     try {
-        const response = await fetch(url,{
-            method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        });
-   
-        if(!response.ok){
-            const data = await response.json();
-            throw new Error(data.message);
+        const response = await fetch(url, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+        if (!response.ok) {
+          const data = await response.json()
+          throw new Error(data.message);
         }
-    }catch{
-        throw new Error("Error removing add")
-
-        }
-    };
+      } catch (error) {
+        throw new Error('Error removing ads')
+      }
+    }
+    
